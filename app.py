@@ -18,7 +18,7 @@ if st.button('Predict:'):
 
     def transform_text(text):
         text=text.lower()
-        text=nltk.word_tokenize(text)
+        text=nltk.word_tokenize(text, preserve_line=True)
         y=[]
         for i in text:
             if i.isalnum():
