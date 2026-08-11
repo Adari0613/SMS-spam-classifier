@@ -5,6 +5,8 @@ import string
 
 from nltk.corpus import stopwords
 from nltk.stem.porter import PorterStemmer
+nltk.download('punkt_tab')
+nltk.download('stopwords')
 
 ps=PorterStemmer()
 
@@ -27,7 +29,7 @@ if st.button('Predict:'):
         y.clear()
 
         for i in text:
-            if i not in stopwords.words('english') and i not in string.punctuation:
+            if i not in set(stopwords.words('english')) and i not in string.punctuation:
                 y.append(i)
         text=y[:]
         y.clear()
